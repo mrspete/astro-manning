@@ -15,14 +15,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup Node.js
+      - name: Setup Node
         uses: pnpm/action-setup@v2
         with:
           version: 8
       - name: Install dependencies
         run: pnpm install
       - name: Build
-        run: npm run build
+        run: pnpm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
