@@ -21,10 +21,12 @@ jobs:
           version: 8
       - name: Install dependencies
         run: pnpm install
+        working-directory: digital-debris
       - name: Build
         run: pnpm run build
+        working-directory: digital-debris
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: digital-debris/dist
