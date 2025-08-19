@@ -1,0 +1,15 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+const posts = await Astro.glob('./blog/*.md');
+---
+<BlogLayout title="Blog">
+  <h2>All Posts</h2>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+        <small> — {post.frontmatter.date}</small>
+      </li>
+    ))}
+  </ul>
+</BlogLayout>
