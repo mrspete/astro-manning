@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Setup NodeJS
         uses: pnpm/action-setup@v2
         with:
           version: 8
